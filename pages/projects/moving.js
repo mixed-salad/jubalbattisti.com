@@ -1,8 +1,16 @@
+import Head from "next/head";
+
 const Moving = () => {
   return (
-    <div>
-      <h1>Video works</h1>
-    </div>
+    <>
+      <Head>
+        <title>Jubal Battisti Photography | Video works</title>
+        <meta name="keywords" content="photography/videography" />
+      </Head>
+      <div>
+        <h1>Video works</h1>
+      </div>
+    </>
   );
 };
 

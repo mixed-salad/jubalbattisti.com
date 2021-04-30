@@ -1,8 +1,16 @@
+import Head from "next/head";
+
 const Performance = () => {
   return (
-    <div>
-      <h1>Performances</h1>
-    </div>
+    <>
+      <Head>
+        <title>Jubal Battisti Photography | Performances</title>
+        <meta name="keywords" content="photography/videography" />
+      </Head>
+      <div>
+        <h1>Performances</h1>
+      </div>
+    </>
   );
 };
 
