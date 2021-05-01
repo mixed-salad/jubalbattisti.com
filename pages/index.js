@@ -1,8 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
+import Link from "next/link";
+//import Image from "next/image";
 import Footer from "../components/Footer";
-import styles from "../styles/Home.module.scss";
 import HomeLayout from "../components/HomeLayout";
+// import { Image, Transformation } from "cloudinary-react";
+import styles from "./../styles/Home.module.scss";
 
 function Home() {
   return (
@@ -11,8 +13,14 @@ function Home() {
         <title>Jubal Battisti Photography | Home</title>
         <meta name="keywords" content="photography/videography" />
       </Head>
-      <div>
-        <h1>Home page</h1>
+      <div className={styles.homeImg}>
+        <Link href="/projects">
+          <a>
+            <img className={styles.logo} src="/logo.png" />
+          </a>
+        </Link>
+      </div>
+      <div className={styles.footer}>
         <Footer />
       </div>
     </>
