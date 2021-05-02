@@ -1,5 +1,4 @@
 import Head from "next/head";
-import photos from "./../../photos.json";
 import Image from "next/image";
 
 const Projects = () => {
@@ -11,9 +10,6 @@ const Projects = () => {
       </Head>
       <div>
         <h1>Projects</h1>
-        {photos.p4.map((photo) => (
-          <Image src={photo} width={400} height={500} />
-        ))}
       </div>
     </>
   );

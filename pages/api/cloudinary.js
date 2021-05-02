@@ -2,9 +2,8 @@
 import axios from "axios";
 
 export const getList = async (tag) => {
-  const res = await axios(
-    `https://res.cloudinary.com/jubalbattisti/image/list/${tag}.json`
-  );
+  const url = `https://res.cloudinary.com/jubalbattisti/image/list/${tag}.json`;
+  const res = await axios(url);
   console.log(res.data.resources);
   return res.data.resources;
 };

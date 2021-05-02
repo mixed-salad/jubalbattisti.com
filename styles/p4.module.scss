@@ -8,9 +8,15 @@
   position: relative;
   overflow: hidden;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 2em;
 }
 
 .imgWrapper {
+  max-height: 40em;
   display: flex;
   justify-content: center;
 }
@@ -36,7 +42,8 @@
   width: 50%;
   height: 100%;
   cursor: url("/images/right-chevron.png"), default;
-  &:hover {
-    cursor: url("/images/right-chevron.png"), default;
-  }
+}
+
+.caption {
+  align-self: center;
 }

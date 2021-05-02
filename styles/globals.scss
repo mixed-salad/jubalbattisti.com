@@ -10,11 +10,15 @@ body {
 
 .content {
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .main {
   width: 95vw;
   margin: 0 auto;
+  margin-bottom: 5em;
 }
 
 a {
@@ -44,12 +48,16 @@ nav {
 
 // footer
 
-footer {
+.footer {
   display: block;
   text-align: center;
-  padding: 2em;
+  padding: 1em;
   margin-top: 2em;
   font-size: 0.8em;
+  p {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 // 404 page

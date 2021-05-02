@@ -20,12 +20,16 @@ const P4 = () => {
   const decrementSliderCount = () => {
     if (sliderCount > 0) {
       setSliderCount((prev) => prev - 1);
+    } else {
+      setSliderCount(photoList.length - 1);
     }
   };
 
   const incrementSliderCount = () => {
     if (sliderCount < photoList.length - 1) {
       setSliderCount((prev) => prev + 1);
+    } else {
+      setSliderCount(0);
     }
   };
 
@@ -37,8 +41,8 @@ const P4 = () => {
       </Head>
       <div className="main">
         <h1>Post Performance Portrait Project (P^4)</h1>
-        <div className={styles.slider}>
-          {!!photoList.length && (
+        {!!photoList.length && (
+          <div className={styles.slider}>
             <div className={styles.imgWrapper}>
               <Image
                 src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photoList[sliderCount].public_id}`}
@@ -46,20 +50,22 @@ const P4 = () => {
                 height={500}
                 leyout="fill"
               />
-              <div className={styles.sliderNavigationGroup}>
-                <div
-                  onClick={decrementSliderCount}
-                  className={styles.sliderNavigationLeft}
-                ></div>
-                <div
-                  onClick={incrementSliderCount}
-                  className={styles.sliderNavigationRight}
-                ></div>
-              </div>
-              {/* <p>{photoList[sliderCount].public_id.context.custom.caption}</p> */}
             </div>
-          )}
-        </div>
+            <div className={styles.sliderNavigationGroup}>
+              <div
+                onClick={decrementSliderCount}
+                className={styles.sliderNavigationLeft}
+              ></div>
+              <div
+                onClick={incrementSliderCount}
+                className={styles.sliderNavigationRight}
+              ></div>
+            </div>
+            <p className={styles.caption}>
+              {photoList[sliderCount].context.custom.caption}
+            </p>
+          </div>
+        )}
       </div>
     </>
   );
