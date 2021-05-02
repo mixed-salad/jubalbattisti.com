@@ -1,0 +1,42 @@
+// .list {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-evenly;
+//   margin: 0 2em;
+// }
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.imgWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.sliderNavigationGroup {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sliderNavigationLeft {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  cursor: url("/images/left-chevron.png"), default;
+}
+
+.sliderNavigationRight {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  cursor: url("/images/right-chevron.png"), default;
+  &:hover {
+    cursor: url("/images/right-chevron.png"), default;
+  }
+}
