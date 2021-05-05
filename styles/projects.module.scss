@@ -1,0 +1,43 @@
+.projectsWrapper {
+  display: flex;
+  height: 30em;
+  max-height: 100vh;
+}
+
+.project {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  margin-right: 1em;
+  img {
+    height: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+  }
+  .projectTitle {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    top: 0;
+    font-size: 2em;
+    font-weight: 300;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+    &:hover {
+      opacity: 1;
+      transition: 1s;
+    }
+  }
+}
