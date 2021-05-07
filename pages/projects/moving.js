@@ -1,4 +1,7 @@
 import Head from "next/head";
+import ReactPlayer from "react-player";
+import videos from "./../../videos.json";
+import styles from "./../../styles/moving.module.scss";
 
 const Moving = () => {
   return (
@@ -8,7 +11,28 @@ const Moving = () => {
         <meta name="keywords" content="photography/videography" />
       </Head>
       <div>
-        <h1>Video works</h1>
+        <div className={styles.header}>
+          <h1>MOTION</h1>
+        </div>
+        <div className="main">
+          <h2 className={styles.category}>Promotional contents</h2>
+          <div className={styles.contents}>
+            {videos.map((video) => (
+              <div className={styles.videoWrapper}>
+                <div className={styles.react_player}>
+                  <ReactPlayer
+                    url={video.url}
+                    light={true}
+                    width="auto"
+                    heigh="auto"
+                    controls
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
     </>
   );

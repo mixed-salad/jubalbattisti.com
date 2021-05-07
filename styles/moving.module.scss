@@ -1,0 +1,33 @@
+.header {
+  background-image: url("https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/Jubal_battisti/performance/performance_2_x6q7mb.jpg");
+  height: 28em;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3em;
+  h1 {
+    color: rgb(255, 255, 255);
+    mix-blend-mode: color-dodge;
+    font-size: 3em;
+  }
+}
+.category {
+  text-align: center;
+}
+
+.contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2em;
+  row-gap: 2em;
+  .videoWrapper {
+    // height: 100%;
+    width: 100%;
+    .react_player {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
