@@ -33,11 +33,16 @@ a {
 
 /* navbar */
 nav {
-  margin-right: 10px;
+  margin-right: 2em;
   padding: 10px 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  .navLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   a {
     margin-left: 1em;
     font-weight: 200;
