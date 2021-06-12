@@ -3,6 +3,14 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { getList } from "../api/cloudinary";
 import styles from "./../../styles/p4.module.scss";
+import { motion } from "framer-motion";
+
+let easing = [0.175, 0.85, 0.42, 0.96];
+const imgVariants = {
+  initial: { opacity: 0, scale: 0.9 },
+  enter: { opacity: 1, scale: 1, transition: { duration: 1, ease: easing } },
+  exit: { opacity: 0, scale: 2, transition: { duration: 0.5, ease: easing } },
+};
 
 const P4 = () => {
   const [photoList, setPhotoList] = useState([]);
@@ -44,12 +52,14 @@ const P4 = () => {
         {!!photoList.length && (
           <div className={styles.slider}>
             <div className={styles.imgWrapper}>
-              <Image
-                src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photoList[sliderCount].public_id}`}
-                width={400}
-                height={500}
-                leyout="fill"
-              />
+              <motion.img variants={imgVariants}>
+                <Image
+                  src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photoList[sliderCount].public_id}`}
+                  width={400}
+                  height={500}
+                  leyout="fill"
+                />
+              </motion.img>
             </div>
             <div className={styles.sliderNavigationGroup}>
               <div

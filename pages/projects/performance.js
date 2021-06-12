@@ -30,7 +30,7 @@ const Performance = () => {
         <meta name="keywords" content="photography/videography" />
       </Head>
       <div className="main">
-        <h1>Performances</h1>
+        <h1>Performance</h1>
         {!!companies.length &&
           companies.map((company) => (
             <SinglePerformance

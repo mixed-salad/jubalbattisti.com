@@ -4,31 +4,12 @@
   position: relative;
   .photoWrapper {
     height: 100%;
-    overflow: hidden;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
 
     img {
       width: auto;
       margin-right: 1em;
-    }
-  }
-  .arrowsGroup {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    .arrowLeft {
-      width: 50%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      cursor: url("/images/left-chevron.png"), default;
-    }
-    .arrowRight {
-      width: 50%;
-      height: 100%;
-      position: absolute;
-      right: 0;
-      cursor: url("/images/right-chevron.png"), default;
     }
   }
 }
