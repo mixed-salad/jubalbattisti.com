@@ -1,20 +1,28 @@
 .projectsWrapper {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   height: 30em;
   max-height: 100vh;
+  cursor: pointer;
 }
 
 .project {
   position: relative;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0;
-  margin-right: 1em;
+  margin: 0 1em 1em 0;
+  flex-basis: 30%;
+  transition: 0.3s;
+  // &.hover {
+  //   flex-basis: 31%;
+  //   transition: 0.3s ease-out;
+  // }
   img {
     height: 100%;
-    max-height: 100vh;
-    object-fit: cover;
+    max-height: 90vh;
   }
   .projectTitle {
     height: 100%;
