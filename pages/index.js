@@ -20,7 +20,7 @@ function Home() {
   const [showText, setShowText] = useState(false);
 
   return (
-    <>
+    <div>
       <Head>
         <title>Jubal Battisti Photography | Home</title>
         <meta name="keywords" content="photography/videography" />
@@ -42,7 +42,7 @@ function Home() {
                 <div>
                   <h1 className={styles.textEnter}>ENTER</h1>
                 </div>
-              )) || <img src="/logo_Whitetext.png" />}
+              )) || <img src="/logos/Logo_Whitetext.png" />}
             </a>
           </Link>
         </div>
@@ -51,7 +51,7 @@ function Home() {
       <div className={styles.footer}>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 
