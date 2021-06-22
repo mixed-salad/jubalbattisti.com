@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const containerVariants = {
   initial: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.5,
     },
   },
   enter: {
@@ -68,7 +68,7 @@ const Projects = () => {
             <Link href="/projects/moving">
               <div id="moving">
                 <img src="/Thumnails/moving_thumbnail.png" />
-                <h3 className={styles.projectTitle}>Moving</h3>
+                <h3 className={styles.projectTitle}>moving</h3>
               </div>
             </Link>
           </motion.div>
@@ -80,7 +80,7 @@ const Projects = () => {
                 onMouseLeave={() => handleMouseLeave("p4")}
               >
                 <Image publicId="Jubal_battisti/p4/190409_P_4_Coming_Society_by_Jubal_Battisti_114-Edit_copy_hzeued.jpg" />
-                <h3 className={styles.projectTitle}>P4</h3>
+                <h3 className={styles.projectTitle}>P^4</h3>
               </div>
             </Link>
           </motion.div>
@@ -88,13 +88,7 @@ const Projects = () => {
             <Link href="/projects/works-in-process">
               <div id="process">
                 <Image publicId="Jubal_battisti/process/process_2_j3tipo.jpg" />
-                <h3 className={styles.projectTitle}>
-                  Works
-                  <br />
-                  in
-                  <br />
-                  Process
-                </h3>
+                <h3 className={styles.projectTitle}>works in process</h3>
               </div>
             </Link>
           </motion.div>
@@ -102,7 +96,7 @@ const Projects = () => {
             <Link href="/projects/performance">
               <div id="performance">
                 <Image publicId="Jubal_battisti/performance/190212_Staatsballett_Berlin_Distant_Matter_by_Jubal_Battisti_0099_nj8lqj.jpg" />
-                <h3 className={styles.projectTitle}>Performance</h3>
+                <h3 className={styles.projectTitle}>performance</h3>
               </div>
             </Link>
           </motion.div>
