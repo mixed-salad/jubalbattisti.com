@@ -5,13 +5,19 @@ import { getList } from "../api/cloudinary";
 import styles from "./../../styles/p4.module.scss";
 import { motion } from "framer-motion";
 
-let easing = [0.175, 0.85, 0.42, 0.96];
 const imgVariants = {
-  initial: { opacity: 0, scale: 0.9 },
-  enter: { opacity: 1, scale: 1, transition: { duration: 1, ease: easing } },
-  exit: { opacity: 0, scale: 2, transition: { duration: 0.5, ease: easing } },
+  initial: {
+    opacity: 0,
+    x: 20,
+  },
+  complete: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
 };
-
 const P4 = () => {
   const [photoList, setPhotoList] = useState([]);
   const [sliderCount, setSliderCount] = useState(0);
@@ -44,38 +50,47 @@ const P4 = () => {
   return (
     <>
       <Head>
-        <title>Jubal Battisti Photography | About</title>
+        <title>Jubal Battisti Photography | P^4</title>
         <meta name="keywords" content="photography/videography" />
       </Head>
       <div className="main">
-        <h1>Post Performance Portrait Project (P^4)</h1>
-        {!!photoList.length && (
-          <div className={styles.slider}>
-            <div className={styles.imgWrapper}>
-              <motion.img variants={imgVariants}>
-                <Image
+        <section>
+          {!!photoList.length && (
+            <div className={styles.slider}>
+              <div className={styles.imgWrapper}>
+                <motion.img
                   src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photoList[sliderCount].public_id}`}
-                  width={400}
-                  height={500}
-                  leyout="fill"
+                  className={styles.p4_img}
+                  initial="initial"
+                  animate="complete"
+                  variants={imgVariants}
                 />
-              </motion.img>
+              </div>
+              <div className={styles.sliderNavigationGroup}>
+                <div
+                  onClick={decrementSliderCount}
+                  className={styles.sliderNavigationLeft}
+                ></div>
+                <div
+                  onClick={incrementSliderCount}
+                  className={styles.sliderNavigationRight}
+                ></div>
+              </div>
+              <p className={styles.caption}>
+                {photoList[sliderCount].context.custom.caption}
+              </p>
             </div>
-            <div className={styles.sliderNavigationGroup}>
-              <div
-                onClick={decrementSliderCount}
-                className={styles.sliderNavigationLeft}
-              ></div>
-              <div
-                onClick={incrementSliderCount}
-                className={styles.sliderNavigationRight}
-              ></div>
-            </div>
-            <p className={styles.caption}>
-              {photoList[sliderCount].context.custom.caption}
-            </p>
-          </div>
-        )}
+          )}
+        </section>
+        <section className={styles.description}>
+          <p>
+            <em>
+              <strong>Post Performace Portrait Project (P^4)</strong>
+            </em>{" "}
+            captures performing artists at the moment of transition when they
+            are just off the stage....{" "}
+          </p>
+        </section>
       </div>
     </>
   );
