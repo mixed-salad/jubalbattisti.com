@@ -20,7 +20,7 @@ body {
 .main {
   width: 95vw;
   margin: 0 auto;
-  margin-bottom: 5em;
+  margin-bottom: 2em;
 }
 
 a {
@@ -33,35 +33,79 @@ a {
 }
 
 /* navbar */
-nav {
-  margin-right: 2em;
+.header-section {
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .navLinks {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
-  }
-  a {
-    margin-left: 2em;
-    font-weight: 200;
-  }
+  z-index: 4;
   .logo {
     margin-right: auto;
     flex: 1;
   }
 }
-
+.navLinks {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  .navLinks__link {
+    margin-bottom: 1em;
+  }
+}
+a {
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+.close-nav-icon {
+  color: white;
+  font-size: 2em;
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  z-index: 4;
+  cursor: pointer;
+}
+.navClosedIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+  .line {
+    margin-top: -45%;
+    margin-bottom: -45%;
+    &:nth-child(1) {
+      transform: scaleX(1.5);
+    }
+    &:nth-child(2) {
+      transform: scaleX(2.2);
+    }
+    &:nth-child(3) {
+      transform: scaleX(1.7);
+    }
+  }
+}
 // footer
 
 .footer {
   display: block;
   text-align: center;
   padding: 1em;
-  margin-top: 2em;
+  margin-top: 1em;
   font-size: 0.8em;
   p {
     padding: 0;
