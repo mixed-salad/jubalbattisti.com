@@ -41,11 +41,10 @@ const Performance = () => {
   useEffect(() => {
     const fetchList = async () => {
       const list = await getList("performance");
-      setPhotoList(list);
+      setPhotoList(["title", ...list]);
     };
     fetchList();
   }, []);
-  
   return (
     <>
       <Head>
@@ -54,13 +53,17 @@ const Performance = () => {
       </Head>
       <div className="main">
         <motion.div className={styles.photoGalleryWrapper} initial="initial" animate="animate" variants={mainVariants}>
-
-        {!!photoList.length &&
-          photoList.map((photo) => (
-            <motion.div key={photo.public_id} className={styles.photoWrapper} variants={imgVariants}>
-            <motion.img src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photo.public_id}`}/>
-            </motion.div>
-          ))}
+          {!!photoList.length &&
+            photoList.map((photo, i) => {
+              if(i === 0) {
+                return (<div className={`${styles["card"]} ${styles["title"]}`}><h2>performance</h2></div>)
+              } else {
+                return (<motion.div key={photo.public_id} className={styles.card} variants={imgVariants}>
+                <motion.img className={styles.img} src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photo.public_id}`}/>
+                </motion.div>)
+              }
+            })
+          }
           </motion.div>
       </div>
     </>
