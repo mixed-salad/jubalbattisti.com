@@ -54,8 +54,9 @@ const P4 = () => {
         <meta name="keywords" content="photography/videography" />
       </Head>
       <div className="main">
-        <section>
-          {!!photoList.length && (
+        <main className={styles.p4Main}>
+          <section className={styles.photoSection}>
+            {!!photoList.length && (
             <div className={styles.slider}>
               <div className={styles.imgWrapper}>
                 <motion.img
@@ -76,9 +77,6 @@ const P4 = () => {
                   className={styles.sliderNavigationRight}
                 ></div>
               </div>
-              <p className={styles.caption}>
-                {photoList[sliderCount].context.custom.caption}
-              </p>
             </div>
           )}
         </section>
@@ -91,6 +89,7 @@ const P4 = () => {
             are just off the stage....{" "}
           </p>
         </section>
+        </main>
       </div>
     </>
   );
