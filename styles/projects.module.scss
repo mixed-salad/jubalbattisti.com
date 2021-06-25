@@ -49,11 +49,17 @@
   .projectsWrapper {
     flex-direction: column;
     flex-wrap: nowrap;
-    max-width: 90vw;
     max-height: unset;
     margin: 0 auto;
     .project {
-      margin: 1em auto;
+      img {
+        width: 100%;
+        margin: 0 1em;
+        object-fit: cover;
+      }
+      .projectTitle {
+        width: 80%;
+      }
     }
   }
 }
