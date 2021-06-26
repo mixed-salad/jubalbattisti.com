@@ -97,7 +97,7 @@ const Performance = () => {
                 <div className={styles.sliderNavigationRight} onClick={() => increasePhotoIndex()}></div>
               </div>
               <div>
-                <span>{photoIndex} / {photoIndex.length - 1}</span>
+                <span>{photoIndex} / {photoList.length - 1}</span>
               </div>
             </motion.div>
           )}
