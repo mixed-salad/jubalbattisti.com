@@ -20,7 +20,7 @@ const galleryVariants = {
   },
 };
 
-const imgVariants = {
+const galleryImgVariants = {
   initial: {
     opacity: 0,
     y: 20,
@@ -31,7 +31,32 @@ const imgVariants = {
     transform: {
       delay: 0.2,
       duration: 0.5,
-      staggerChildren: 0.2,
+    },
+  },
+};
+
+const lightboxVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transform: {
+      duration: 0.7,
+      ease: "easeIn",
+    },
+  },
+};
+
+const lightboxImgVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transform: {
+      duration: 0.3,
+      ease: "easeIn",
     },
   },
 };
@@ -40,6 +65,7 @@ const Performance = () => {
   const [photoList, setPhotoList] = useState([]);
   const [lightboxVisible, setLightboxVisible] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(1);
+  const [refresh, setRefresh] = useState(1);
 
   useEffect(() => {
     const fetchList = async () => {
@@ -48,6 +74,18 @@ const Performance = () => {
     };
     fetchList();
   }, []);
+
+  useEffect(() => {
+    if (refresh === 0) {
+      setRefresh(1);
+      console.log("refresh to 1");
+    }
+  }, [refresh]);
+
+  useEffect(() => {
+    setRefresh(0);
+    console.log("refresh to 0");
+  }, [photoIndex]);
 
   const openLightbox = (index) => {
     setLightboxVisible(true);
@@ -67,7 +105,8 @@ const Performance = () => {
       : setPhotoIndex(photoIndex + 1);
   };
 
-  console.log(photoIndex);
+  let image = photoList[photoIndex];
+
   return (
     <>
       <Head>
@@ -95,7 +134,7 @@ const Performance = () => {
                   <motion.div
                     key={photo.public_id}
                     className={styles.card}
-                    variants={imgVariants}
+                    variants={galleryImgVariants}
                     onClick={() => openLightbox(i)}
                   >
                     <motion.img
@@ -109,7 +148,13 @@ const Performance = () => {
         </motion.div>
         {/* This is to show the lightbox when the photo is clicked */}
         {lightboxVisible && (
-          <motion.div className={styles.modal}>
+          <motion.div
+            className={styles.modal}
+            initial="initial"
+            animate="animate"
+            exit="initial"
+            variants={lightboxVariants}
+          >
             <span
               onClick={() => closeLightbox()}
               className={styles.closeLightbox}
@@ -118,9 +163,16 @@ const Performance = () => {
             </span>
             <motion.div className={styles.modalContent}>
               <motion.img
+                variants={lightboxImgVariants}
                 className={styles.lightboxImg}
-                src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photoList[photoIndex].public_id}`}
+                src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${image.public_id}`}
               ></motion.img>
+              <div className={styles.lightboxDescriptions}>
+                <caption>{`${image.context.custom.work} by ${image.context.custom.choreographer}`}</caption>
+                <span>
+                  {photoIndex} / {photoList.length - 1}
+                </span>
+              </div>
             </motion.div>
             <div className={styles.sliderNavigationGroup}>
               <div
@@ -131,11 +183,6 @@ const Performance = () => {
                 className={styles.sliderNavigationRight}
                 onClick={() => increasePhotoIndex()}
               ></div>
-            </div>
-            <div>
-              <span>
-                {photoIndex} / {photoList.length - 1}
-              </span>
             </div>
           </motion.div>
         )}

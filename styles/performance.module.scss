@@ -63,8 +63,16 @@
     align-items: center;
     .lightboxImg {
       width: 80%;
-      max-height: 90vh;
+      max-height: 85vh;
       object-fit: contain;
+    }
+    .lightboxDescriptions {
+      padding: 1em 1em;
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9em;
     }
   }
 }
