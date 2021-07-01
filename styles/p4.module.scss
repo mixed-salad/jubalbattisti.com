@@ -24,7 +24,9 @@
 
 .p4_img {
   height: 80vh;
+  width: unset;
   object-fit: contain;
+  padding: 0 1em;
 }
 
 .sliderNavigationGroup {
@@ -39,7 +41,8 @@
   left: 0;
   width: 50%;
   height: 100%;
-  cursor: url("/images/left-chevron.png"), default;
+  transform: translateX(-2em);
+  cursor: url("/images/chevron-left_white.png"), default;
 }
 
 .sliderNavigationRight {
@@ -47,7 +50,8 @@
   right: 0;
   width: 50%;
   height: 100%;
-  cursor: url("/images/right-chevron.png"), default;
+  transform: translateX(2em);
+  cursor: url("/images/chevron-right_white.png"), default;
 }
 
 .caption {

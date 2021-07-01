@@ -48,34 +48,40 @@ const Dueto = () => {
         <meta name="keywords" content="photography/videography" />
       </Head>
       <div className="main">
-        <h1>DUETO</h1>
-        {!!photoList.length && (
-          <div className={styles.slider}>
-            <div className={styles.imgWrapper}>
-              <motion.img variants={imgVariants}>
-                <Image
-                  src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photoList[sliderCount].public_id}`}
-                  width={400}
-                  height={500}
-                  leyout="fill"
-                />
-              </motion.img>
+        <main className={styles.p4Main}>
+          {!!photoList.length && (
+            <div className={styles.slider}>
+              <div className={styles.imgWrapper}>
+                <motion.div variants={imgVariants}>
+                  <Image
+                    src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photoList[sliderCount].public_id}`}
+                    width={400}
+                    height={500}
+                    leyout="fill"
+                  />
+                </motion.div>
+              </div>
+              <div className={styles.sliderNavigationGroup}>
+                <div
+                  onClick={decrementSliderCount}
+                  className={styles.sliderNavigationLeft}
+                ></div>
+                <div
+                  onClick={incrementSliderCount}
+                  className={styles.sliderNavigationRight}
+                ></div>
+              </div>
             </div>
-            <div className={styles.sliderNavigationGroup}>
-              <div
-                onClick={decrementSliderCount}
-                className={styles.sliderNavigationLeft}
-              ></div>
-              <div
-                onClick={incrementSliderCount}
-                className={styles.sliderNavigationRight}
-              ></div>
-            </div>
-            <p className={styles.caption}>
-              {photoList[sliderCount].context.custom.caption}
+          )}
+          <section className={styles.description}>
+            <p>
+              <em>
+                <strong>DUETO</strong>
+              </em>{" "}
+              Collaboration with a Berlin based ceramic sculptor, Jojo Corväiá
             </p>
-          </div>
-        )}
+          </section>
+        </main>
       </div>
     </>
   );
