@@ -85,18 +85,30 @@ const Navbar = () => {
                   <a>Projects</a>
                 </Link>
               </motion.div>
-              <motion.div className="navLinks__link" variants={linkVariants}>
+              <motion.div
+                className="navLinks__link"
+                variants={linkVariants}
+                onClick={() => setNavView(!navView)}
+              >
                 <Link href="/about">
                   <a>About</a>
                 </Link>
               </motion.div>
-              <motion.div className="navLinks__link" variants={linkVariants}>
+              <motion.div
+                className="navLinks__link"
+                variants={linkVariants}
+                onClick={() => setNavView(!navView)}
+              >
                 <Link href="/contact">
                   <a>Contact</a>
                 </Link>
               </motion.div>
 
-              <motion.div className="navLinks__link" variants={linkVariants}>
+              <motion.div
+                className="navLinks__link"
+                variants={linkVariants}
+                onClick={() => setNavView(!navView)}
+              >
                 <a
                   href="https://www.instagram.com/jubalbattistiphotography/"
                   target="_blank"

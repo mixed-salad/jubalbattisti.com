@@ -80,7 +80,19 @@ const Projects = () => {
                 onMouseLeave={() => handleMouseLeave("p4")}
               >
                 <Image publicId="Jubal_battisti/p4/190409_P_4_Coming_Society_by_Jubal_Battisti_114-Edit_copy_hzeued.jpg" />
-                <h3 className={styles.projectTitle}>P^4</h3>
+                <h3 className={styles.projectTitle}>
+                  P^4
+                  <br />
+                  <span>
+                    post
+                    <br />
+                    performance
+                    <br />
+                    portrait
+                    <br />
+                    project
+                  </span>
+                </h3>
               </div>
             </Link>
           </motion.div>

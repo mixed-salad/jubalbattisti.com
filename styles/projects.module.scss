@@ -37,6 +37,9 @@
     align-items: center;
     opacity: 0;
     transition: 0.5s;
+    span {
+      font-size: 0.5em;
+    }
     &:hover,
     &:active {
       opacity: 1;
