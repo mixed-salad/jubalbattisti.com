@@ -7,7 +7,6 @@ import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
 
 const Navbar = () => {
-  const [navView, setNavView] = useState(false);
 
   return (
     <>

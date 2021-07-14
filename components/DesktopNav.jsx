@@ -64,7 +64,6 @@ const DesktopNav = () => {
             <motion.div
               className="navLinks__link"
               variants={linkVariants}
-              onClick={() => setNavView(!navView)}
             >
               <Link href="/about">
                 <a>About</a>
@@ -73,7 +72,6 @@ const DesktopNav = () => {
             <motion.div
               className="navLinks__link"
               variants={linkVariants}
-              onClick={() => setNavView(!navView)}
             >
               <Link href="/contact">
                 <a>Contact</a>
@@ -83,7 +81,6 @@ const DesktopNav = () => {
             <motion.div
               className="navLinks__link"
               variants={linkVariants}
-              onClick={() => setNavView(!navView)}
             >
               <a
                 href="https://www.instagram.com/jubalbattistiphotography/"
