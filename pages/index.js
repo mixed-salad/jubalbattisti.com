@@ -1,19 +1,18 @@
-import Head from "next/head";
-import Link from "next/link";
-import { useState } from "react";
+import Head from 'next/head';
+import Link from 'next/link';
+import { useState } from 'react';
 //import Image from "next/image";
-import Footer from "../components/Footer";
-import HomeLayout from "../components/HomeLayout";
+import Footer from '../components/Footer';
+import HomeLayout from '../components/HomeLayout';
 // import { Image, Transformation } from "cloudinary-react";
-import styles from "./../styles/Home.module.scss";
-import FilePlayer from "react-player/file";
-import { motion } from "framer-motion";
+import styles from './../styles/Home.module.scss';
+import { motion } from 'framer-motion';
 
 let easing = [0.175, 0.85, 0.42, 0.96];
 const variants = {
   initial: { opacity: 0, scale: 1 },
   enter: { opacity: 1, scale: 1.1, transition: { duration: 1, ease: easing } },
-  exit: { opacity: 0, scale: 2 },
+  exit: { opacity: 0, scale: 2 }
 };
 
 function Home() {

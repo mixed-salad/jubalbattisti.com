@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #d2d2d2;
   color: #333;
   scroll-behavior: smooth;
@@ -12,6 +12,7 @@ body {
 
 .content {
   width: 100vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -61,19 +62,17 @@ a {
   justify-content: space-between;
   align-items: center;
   color: rgb(121, 121, 121);
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: 200;
   z-index: 2;
   .navLinks__link {
     margin-bottom: 1em;
-    &:hover, 
+    &:hover,
     &:focus {
-      color:rgb(63, 63, 63)
+      color: rgb(63, 63, 63);
     }
   }
 }
-
-
 
 // Mobile Navbar
 @media (max-width: 500px) {
@@ -145,6 +144,8 @@ a {
   padding: 1em;
   margin-top: 1em;
   font-size: 0.8em;
+  position: relative;
+  bottom: 1em;
   p {
     padding: 0;
     margin: 0;
