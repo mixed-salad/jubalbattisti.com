@@ -2,6 +2,26 @@ import Head from 'next/head';
 import { motion } from 'framer-motion';
 import styles from './../styles/about.module.scss';
 
+const variants = {
+  initial: {
+    opacity: 0,
+    y: 10
+  },
+  complete: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5
+    }
+  },
+  exit: {
+    opacity: 0,
+    y: 20,
+    transition: {
+      duration: 0.5
+    }
+  }
+};
 const About = () => {
   return (
     <>
@@ -9,7 +29,13 @@ const About = () => {
         <title>Jubal Battisti Photography | About</title>
         <meta name="keywords" content="photography/videography" />
       </Head>
-      <motion.div initial="initial" animate="complete" className={styles.main}>
+      <motion.div
+        initial="initial"
+        animate="complete"
+        exit="exit"
+        variants={variants}
+        className={styles.main}
+      >
         <h1>Jubal Battisti</h1>
         <p>
           is a Berlin-based, US-born photographer, videographer, and performer.
