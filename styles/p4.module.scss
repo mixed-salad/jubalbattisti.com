@@ -41,8 +41,8 @@
   left: 0;
   width: 50%;
   height: 100%;
-  transform: translateX(-2em);
-  cursor: url("/images/chevron-left_white.png"), default;
+  transform: translateX(-4em);
+  cursor: url('/images/chevron-left_white.png'), default;
 }
 
 .sliderNavigationRight {
@@ -50,8 +50,8 @@
   right: 0;
   width: 50%;
   height: 100%;
-  transform: translateX(2em);
-  cursor: url("/images/chevron-right_white.png"), default;
+  transform: translateX(4em);
+  cursor: url('/images/chevron-right_white.png'), default;
 }
 
 .caption {
@@ -66,16 +66,23 @@
   width: 40%;
   max-width: 25em;
   margin-right: 2em;
+  text-align: justify;
 }
 
 @media (max-width: 700px) {
   .p4Main {
     flex-direction: column;
+    align-items: inherit;
     .photoSection {
       margin-bottom: 1em;
+      .p4_image {
+        padding: 0;
+      }
     }
     .description {
       height: 100%;
+      width: 100%;
+      margin: 0 auto;
     }
   }
 }
