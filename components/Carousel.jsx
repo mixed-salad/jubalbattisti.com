@@ -4,11 +4,15 @@ import 'slick-carousel/slick/slick-theme.css';
 import { useEffect, useState } from 'react';
 import { getList } from './../api/cloudinary';
 import SliderArrow from './SliderArrows';
-import styles from './../styles/p4_test.module.scss';
+import styles from './../styles/p4.module.scss';
+
+//const viewportWidth = window.innerWidth;
 
 const Carousel = () => {
   const [photoList, setPhotoList] = useState([]);
-  const viewportWidth = window.innerWidth;
+  const [viewportWidth, setViewportWidth] = useState(undefined);
+
+  useEffect(() => setViewportWidth(window.innerWidth), []);
 
   useEffect(() => {
     const fetchList = async () => {

@@ -1,4 +1,4 @@
-import styles from './../styles/p4_test.module.scss';
+import styles from './../styles/p4.module.scss';
 
 const SliderArrow = (props) => {
   let className = props.type === 'next' ? 'nextArrow' : 'prevArrow';

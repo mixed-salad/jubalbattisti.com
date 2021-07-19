@@ -1,72 +1,57 @@
 .p4Main {
   display: flex;
   justify-content: center;
-  flex-direction: row-reverse;
-  align-items: center;
+  align-items: flex-start;
   margin: 0 auto;
+  .description {
+    max-width: 25em;
+    margin: 0 1em;
+    text-align: justify;
+    strong {
+      font-size: 1.2em;
+    }
+  }
+  .photoSection {
+    width: 50%;
+    img {
+      max-height: 40em;
+      object-fit: contain;
+    }
+  }
 }
 
-.slider {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
+// Slider styles
+.slides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nextArrow,
+.prevArrow {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
-.imgWrapper {
-  max-height: 40em;
-  display: flex;
-  justify-content: center;
-}
-
-.p4_img {
-  height: 80vh;
-  width: unset;
-  object-fit: contain;
-  padding: 0 1em;
-}
-
-.sliderNavigationGroup {
+.nextArrow {
   position: absolute;
+  height: 100%;
+  right: -2em;
   top: 0;
-  width: 100%;
-  height: 100%;
 }
 
-.sliderNavigationLeft {
+.prevArrow {
   position: absolute;
-  left: 0;
-  width: 50%;
   height: 100%;
-  transform: translateX(-4em);
-  cursor: url('/images/chevron-left_white.png'), default;
+  left: -2em;
+  top: 0;
 }
 
-.sliderNavigationRight {
-  position: absolute;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  transform: translateX(4em);
-  cursor: url('/images/chevron-right_white.png'), default;
-}
-
-.caption {
-  align-self: center;
-}
-
-.description {
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 1em;
-  border-radius: 25px;
-  height: 80vh;
-  width: 40%;
-  max-width: 25em;
-  margin-right: 2em;
-  text-align: justify;
+.arrows {
+  z-index: 5;
+  width: 4em;
 }
 
 @media (max-width: 700px) {
@@ -75,6 +60,7 @@
     align-items: inherit;
     .photoSection {
       margin-bottom: 1em;
+      width: 100%;
       .p4_image {
         padding: 0;
       }
@@ -84,5 +70,9 @@
       width: 100%;
       margin: 0 auto;
     }
+  }
+  .nextArrow,
+  .prevArrow {
+    display: none;
   }
 }
