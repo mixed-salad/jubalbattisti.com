@@ -8,7 +8,7 @@ import styles from './../styles/p4.module.scss';
 
 //const viewportWidth = window.innerWidth;
 
-const Carousel = () => {
+const Carousel = ({ category }) => {
   const [photoList, setPhotoList] = useState([]);
   const [viewportWidth, setViewportWidth] = useState(undefined);
 
@@ -16,7 +16,7 @@ const Carousel = () => {
 
   useEffect(() => {
     const fetchList = async () => {
-      const list = await getList('p4');
+      const list = await getList(category);
       console.log(list);
       setPhotoList(list);
     };
@@ -45,7 +45,11 @@ const Carousel = () => {
               <img
                 className="sliderImg"
                 src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${image.public_id}`}
-                alt={image.context.custom.caption}
+                alt={
+                  image.context
+                    ? image.context.custom.caption
+                    : 'Jubal Battisti Photography'
+                }
               />
             </div>
           );

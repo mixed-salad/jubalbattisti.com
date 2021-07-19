@@ -54,6 +54,15 @@
   width: 4em;
 }
 
+// Links
+.description .link {
+  font-size: 0.6em;
+  color: #808080;
+  &:hover {
+    color: #303030;
+  }
+}
+
 @media (max-width: 700px) {
   .p4Main {
     flex-direction: column;

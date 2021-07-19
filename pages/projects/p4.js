@@ -31,7 +31,7 @@ const P4 = () => {
             </p>
           </section>
           <section className={styles.photoSection}>
-            <Carousel />
+            <Carousel category="p4" />
           </section>
         </main>
       </div>
