@@ -1,25 +1,25 @@
-import Head from "next/head";
-import Link from "next/link";
-import { Image, Transformation } from "cloudinary-react";
-import styles from "./../../styles/projects.module.scss";
-import { motion } from "framer-motion";
+import Head from 'next/head';
+import Link from 'next/link';
+import { Image, Transformation } from 'cloudinary-react';
+import styles from './../../styles/projects.module.scss';
+import { motion } from 'framer-motion';
 
 const containerVariants = {
   initial: {
     transition: {
-      staggerChildren: 0.5,
-    },
+      staggerChildren: 0.5
+    }
   },
   enter: {
     transition: {
-      staggerChildren: 0.2,
-    },
+      staggerChildren: 0.2
+    }
   },
   exit: {
     transition: {
-      staggerChildren: 0.1,
-    },
-  },
+      staggerChildren: 0.1
+    }
+  }
 };
 
 const itemVariants = {
@@ -28,13 +28,13 @@ const itemVariants = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { duration: 0.3, ease: "easeInOut" },
+    transition: { duration: 0.3, ease: 'easeInOut' }
   },
   exit: {
     opacity: 0,
     y: 50,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
+    transition: { duration: 0.5, ease: 'easeInOut' }
+  }
 };
 
 const Projects = () => {
@@ -43,7 +43,7 @@ const Projects = () => {
     target.classList.add(styles.hover);
   };
   const handleMouseLeave = (project) => {
-    console.log(project, "handling mouse leave");
+    console.log(project, 'handling mouse leave');
 
     const target = document.getElementById(project);
     target.classList.remove(styles.hover);
@@ -68,7 +68,7 @@ const Projects = () => {
             <Link href="/projects/moving">
               <div id="moving">
                 <img src="/Thumnails/moving_thumbnail.png" />
-                <h3 className={styles.projectTitle}>moving</h3>
+                <h3 className={styles.projectTitle}>motion</h3>
               </div>
             </Link>
           </motion.div>
@@ -76,8 +76,8 @@ const Projects = () => {
             <Link href="/projects/p4">
               <div
                 id="p4"
-                onMouseOver={() => handleMouseOver("p4")}
-                onMouseLeave={() => handleMouseLeave("p4")}
+                onMouseOver={() => handleMouseOver('p4')}
+                onMouseLeave={() => handleMouseLeave('p4')}
               >
                 <Image publicId="Jubal_battisti/p4/190409_P_4_Coming_Society_by_Jubal_Battisti_114-Edit_copy_hzeued.jpg" />
                 <h3 className={styles.projectTitle}>
