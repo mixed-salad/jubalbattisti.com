@@ -43,7 +43,7 @@ const Carousel = ({ category }) => {
           return (
             <div className="wrapper" key={index}>
               <img
-                className="sliderImg"
+                className={styles.sliderImg}
                 src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${image.public_id}`}
                 alt={
                   image.context

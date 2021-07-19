@@ -27,31 +27,39 @@
   align-items: center;
 }
 
-.nextArrow,
+.nextArrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  right: -4em;
+  top: 0;
+  cursor: url(/images/chevron-right_white.png);
+  z-index: 5;
+}
+
 .prevArrow {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-
-.nextArrow {
+  align-items: flex-start;
   position: absolute;
   height: 100%;
-  right: -2em;
-  top: 0;
-}
-
-.prevArrow {
-  position: absolute;
-  height: 100%;
-  left: -2em;
+  width: 50%;
+  left: -4em;
   top: 0;
 }
 
 .arrows {
   z-index: 5;
   width: 4em;
+}
+
+.slides .sliderImg {
+  align-self: center;
 }
 
 // Links
