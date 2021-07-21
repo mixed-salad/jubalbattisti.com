@@ -1,39 +1,39 @@
-import { useState } from "react";
-import styles from "./../styles/performance.module.scss";
-import { AnimatePresence, motion } from "framer-motion";
-import { FaTimesCircle } from "react-icons/fa";
+import { useState } from 'react';
+import styles from './../styles/performance.module.scss';
+import { AnimatePresence, motion } from 'framer-motion';
+import { FaTimesCircle } from 'react-icons/fa';
 
 const lightboxVariants = {
   initial: {
-    opacity: 0,
+    opacity: 0
   },
   animate: {
     opacity: 1,
     transform: {
       duration: 0.7,
-      ease: "easeIn",
-    },
+      ease: 'easeIn'
+    }
   },
   exit: {
     opacity: 0,
     transform: {
       duration: 0.7,
-      ease: "easeIn",
-    },
-  },
+      ease: 'easeIn'
+    }
+  }
 };
 
 const lightboxImgVariants = {
   initial: {
-    opacity: 0,
+    opacity: 0
   },
   animate: {
     opacity: 1,
     transform: {
       duration: 0.3,
-      ease: "easeIn",
-    },
-  },
+      ease: 'easeIn'
+    }
+  }
 };
 
 const Lightbox = ({ images, index, onCloseLightbox }) => {
@@ -74,9 +74,9 @@ const Lightbox = ({ images, index, onCloseLightbox }) => {
           ></motion.img>
           {image.context.custom.work && image.context.custom.choreographer && (
             <div className={styles.lightboxDescriptions}>
-              <caption>{`${image.context.custom.work} by ${image.context.custom.choreographer}`}</caption>
+              <span>{`${image.context.custom.work} by ${image.context.custom.choreographer}`}</span>
               <span>
-                {index} / {images.length - 1}
+                {currentIndex} / {images.length - 1}
               </span>
             </div>
           )}
