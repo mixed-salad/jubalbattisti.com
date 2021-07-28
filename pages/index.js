@@ -1,22 +1,32 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
+import Head from "next/head";
+import Link from "next/link";
+import { useState, useEffect } from "react";
 //import Image from "next/image";
-import Footer from '../components/Footer';
-import HomeLayout from '../components/HomeLayout';
+import Footer from "../components/Footer";
+import HomeLayout from "../components/HomeLayout";
 // import { Image, Transformation } from "cloudinary-react";
-import styles from './../styles/Home.module.scss';
-import { motion } from 'framer-motion';
+import styles from "./../styles/Home.module.scss";
+import { motion } from "framer-motion";
 
 let easing = [0.175, 0.85, 0.42, 0.96];
 const variants = {
   initial: { opacity: 0, scale: 1 },
   enter: { opacity: 1, scale: 1.1, transition: { duration: 1, ease: easing } },
-  exit: { opacity: 0, scale: 2 }
+  exit: { opacity: 0, scale: 2 },
 };
 
 function Home() {
   const [showText, setShowText] = useState(false);
+  const [timer, setTimer] = useState(null);
+
+  useEffect(() => {
+    const timeOut = setTimeout(
+      () => (window.location.href = "/projects"),
+      5000
+    );
+    setTimer(timeOut);
+    return clearTimeout(timer);
+  }, []);
 
   return (
     <div>
@@ -36,6 +46,7 @@ function Home() {
               className={styles.logo_container}
               onMouseEnter={() => setShowText(true)}
               onMouseLeave={() => setShowText(false)}
+              onClick={() => clearTimeout(timer)}
             >
               {(showText && (
                 <div>
