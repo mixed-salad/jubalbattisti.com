@@ -5,7 +5,7 @@
   margin: 0 auto;
   .description {
     max-width: 25em;
-    margin: 0 1em;
+    margin: 0 1.5em;
     text-align: justify;
     strong {
       font-size: 1.2em;
@@ -14,7 +14,7 @@
   .photoSection {
     width: 50%;
     img {
-      max-height: 40em;
+      max-height: 95vh;
       object-fit: contain;
     }
   }
@@ -27,36 +27,29 @@
   align-items: center;
 }
 
-.nextArrow {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
+.nextArrow,
+.prevArrow {
   position: absolute;
   height: 100%;
   width: 50%;
-  right: -4em;
   top: 0;
-  cursor: url(/images/chevron-right_white.png);
   z-index: 5;
+}
+
+.nextArrow {
+  right: -2em;
+  cursor: url(/images/chevron-right_white.png), pointer;
 }
 
 .prevArrow {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  left: -4em;
-  top: 0;
+  left: -2em;
+  cursor: url(/images/chevron-left_white.png), pointer;
 }
 
-.arrows {
-  z-index: 5;
-  width: 4em;
-}
+// .arrows {
+//   z-index: 5;
+//   width: 4em;
+// }
 
 .slides .sliderImg {
   align-self: center;
