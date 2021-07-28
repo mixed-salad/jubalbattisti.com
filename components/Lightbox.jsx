@@ -36,7 +36,7 @@ const lightboxImgVariants = {
   },
 };
 
-const Lightbox = ({ images, index, onCloseLightbox }) => {
+const Lightbox = ({ images, index, onCloseLightbox, category }) => {
   const [currentIndex, setCurrentIndex] = useState(index);
 
   const closeLightbox = () => onCloseLightbox();
@@ -66,7 +66,7 @@ const Lightbox = ({ images, index, onCloseLightbox }) => {
         <span onClick={() => closeLightbox()} className={styles.closeLightbox}>
           <FaTimesCircle size="2em" />
         </span>
-        <motion.div className={styles.modalContent}>
+        <motion.div className={styles.modalContent_lg}>
           <motion.img
             variants={lightboxImgVariants}
             className={styles.lightboxImg}
@@ -81,6 +81,7 @@ const Lightbox = ({ images, index, onCloseLightbox }) => {
             </div>
           )}
         </motion.div>
+
         <div className={styles.sliderNavigationGroup}>
           <div
             className={styles.sliderNavigationLeft}

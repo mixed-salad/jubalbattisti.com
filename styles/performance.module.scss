@@ -56,7 +56,7 @@
       cursor: pointer;
     }
   }
-  .modalContent {
+  .modalContent_lg {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -103,3 +103,12 @@
   bottom: 0;
   cursor: url("/arrows/chevron-right_white.png"), default;
 }
+
+// @media (max-width: 800px) {
+//   .modalContent_md {
+//     display: block;
+//   }
+//   .modalContent_lg {
+//     display: none;
+//   }
+// }

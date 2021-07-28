@@ -4,6 +4,7 @@ import { getList } from "../../api/cloudinary";
 import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
 import styles from "./../../styles/performance.module.scss";
+import Carousel from "../../components/Carousel";
 
 const galleryVariants = {
   initial: {},
@@ -34,6 +35,7 @@ const Performance = () => {
   const [photoList, setPhotoList] = useState([]);
   const [lightboxVisible, setLightboxVisible] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(1);
+  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     const fetchList = async () => {
@@ -41,6 +43,14 @@ const Performance = () => {
       setPhotoList(["title", ...list]);
     };
     fetchList();
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const deviceWidth = window.innerWidth;
+      deviceWidth < 800 ? setMobile(true) : setMobile(false);
+    };
+    window.addEventListener("resize", handleResize);
   }, []);
 
   const openLightbox = (index) => {
@@ -91,13 +101,17 @@ const Performance = () => {
             })}
         </motion.div>
         {/* This is to show the lightbox when the photo is clicked */}
-        {lightboxVisible && (
-          <Lightbox
-            images={photoList}
-            index={photoIndex}
-            onCloseLightbox={() => setLightboxVisible(false)}
-          />
+        {lightboxVisible && !mobile && (
+          <div className={styles.modalContent_md}>
+            <Lightbox
+              images={photoList}
+              index={photoIndex}
+              onCloseLightbox={() => setLightboxVisible(false)}
+              category="performance"
+            />
+          </div>
         )}
+        {lightboxVisible && mobile && <Carousel category="performance" />}
       </div>
     </>
   );

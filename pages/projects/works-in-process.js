@@ -97,6 +97,7 @@ const WorksInProcess = () => {
             images={photoList}
             index={photoIndex}
             onCloseLightbox={() => setLightboxVisible(false)}
+            category="process"
           />
         )}
       </div>
