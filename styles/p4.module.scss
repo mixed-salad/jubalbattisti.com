@@ -34,16 +34,17 @@
   width: 50%;
   top: 0;
   z-index: 5;
+  background-blend-mode: darken;
 }
 
 .nextArrow {
   right: -2em;
-  cursor: url(/images/chevron-right_white.png), pointer;
+  cursor: url(/arrows/chevron-right-60-darker.png), pointer;
 }
 
 .prevArrow {
   left: -2em;
-  cursor: url(/images/chevron-left_white.png), pointer;
+  cursor: url(/arrows/chevron-left-60-darker.png), pointer;
 }
 
 // .arrows {
