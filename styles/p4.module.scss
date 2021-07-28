@@ -10,6 +10,9 @@
     strong {
       font-size: 1.2em;
     }
+    p {
+      font-weight: 200;
+    }
   }
   .photoSection {
     width: 50%;
@@ -54,6 +57,7 @@
 
 .slides .sliderImg {
   align-self: center;
+  padding: 0 0.3em;
 }
 
 // Links
