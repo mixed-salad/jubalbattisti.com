@@ -1,0 +1,20 @@
+name: deploy-to-live
+on:
+  push:
+    branches:
+      - main
+      - master
+jobs:
+  deploy-live:
+    name: Deploy to jubalbattisti.com live
+    runs-on: self-hosted
+    steps:
+      - name: Update source
+        uses: actions/checkout@v2
+      - name: Read the HTTP_PORT var from the runner's env
+        # see https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions#environment-files
+        run: |
+          source $NGINX_VAR_CONF
+          echo "HTTP_PORT=$jubalbattisti_com_HTTP_PORT" >> $GITHUB_ENV
+      - name: Restart the container
+        run: docker-compose up --build -d

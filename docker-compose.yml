@@ -1,0 +1,11 @@
+version: '3'
+services:
+  next:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: next-jubalbattisti-com
+    restart: always
+    ports:
+      # Don't forget your .env file
+      - "${HTTP_PORT}:3000"
