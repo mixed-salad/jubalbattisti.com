@@ -1,9 +1,9 @@
-version: '3'
+version: "3"
 services:
   next:
     build:
-        context: .
-        dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile
     image: next-jubalbattisti-com
     restart: always
     ports:

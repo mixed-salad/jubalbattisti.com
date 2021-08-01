@@ -15,7 +15,6 @@ const Moving = () => {
           <h1>MOTION</h1>
         </div>
         <div className="main">
-          <h2 className={styles.category}>Promotional contents</h2>
           <div className={styles.contents}>
             {videos.map((video) => (
               <div className={styles.videoWrapper}>
