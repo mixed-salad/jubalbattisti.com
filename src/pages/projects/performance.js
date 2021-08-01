@@ -66,52 +66,58 @@ const Performance = () => {
       </Head>
       <div className="main">
         {/* This is the to show the gallery */}
-        <motion.div
-          className={styles.photoGalleryWrapper}
-          initial="initial"
-          animate="animate"
-          variants={galleryVariants}
-        >
-          {!!photoList.length &&
-            photoList.map((photo, i) => {
-              if (i === 0) {
-                return (
-                  <div
-                    key="performance_title"
-                    className={`${styles["card"]} ${styles["title"]}`}
-                  >
-                    <h2>performance</h2>
-                  </div>
-                );
-              } else {
-                return (
-                  <motion.div
-                    key={photo.public_id}
-                    className={styles.card}
-                    onClick={() => openLightbox(i)}
-                    variants={galleryImgVariants}
-                  >
-                    <motion.img
-                      className={styles.img}
-                      src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photo.public_id}`}
-                    />
-                  </motion.div>
-                );
-              }
-            })}
-        </motion.div>
-        {/* This is to show the lightbox when the photo is clicked */}
-        {lightboxVisible && !mobile && (
-          <div className={styles.modalContent_md}>
-            <Lightbox
-              images={photoList}
-              index={photoIndex}
-              onCloseLightbox={() => setLightboxVisible(false)}
-              category="performance"
-            />
-          </div>
-        )}
-        {lightboxVisible && mobile && <Carousel category="performance" />}
+        <div className={styles.desktop}>
+          <motion.div
+            className={styles.photoGalleryWrapper}
+            initial="initial"
+            animate="animate"
+            variants={galleryVariants}
+          >
+            {!!photoList.length &&
+              photoList.map((photo, i) => {
+                if (i === 0) {
+                  return (
+                    <div
+                      key="performance_title"
+                      className={`${styles["card"]} ${styles["title"]}`}
+                    >
+                      <h2>performance</h2>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <motion.div
+                      key={photo.public_id}
+                      className={styles.card}
+                      onClick={() => openLightbox(i)}
+                      variants={galleryImgVariants}
+                    >
+                      <motion.img
+                        className={styles.img}
+                        src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photo.public_id}`}
+                      />
+                    </motion.div>
+                  );
+                }
+              })}
+          </motion.div>
+          {/* This is to show the lightbox when the photo is clicked */}
+          {lightboxVisible && (
+            <>
+              <div className={styles.modalContent_md}>
+                <Lightbox
+                  images={photoList}
+                  index={photoIndex}
+                  onCloseLightbox={() => setLightboxVisible(false)}
+                  category="performance"
+                />
+              </div>
+              <div className={styles.mobile}>
+                <Carousel category="performance" />
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </>
   );

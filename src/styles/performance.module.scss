@@ -1,3 +1,9 @@
+.desktop {
+  display: block;
+}
+.mobile {
+  display: none;
+}
 .photoGalleryWrapper {
   position: relative;
   display: flex;
@@ -104,11 +110,19 @@
   cursor: url("/arrows/chevron-right_white.png"), default;
 }
 
-// @media (max-width: 800px) {
-//   .modalContent_md {
-//     display: block;
-//   }
-//   .modalContent_lg {
-//     display: none;
-//   }
-// }
+@media (max-width: 800px) {
+  .modalContent_md {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 1);
+    top: 0;
+    left: 0;
+  }
+}

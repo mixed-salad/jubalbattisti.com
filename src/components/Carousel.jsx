@@ -7,8 +7,13 @@ import SliderArrow from "./SliderArrows";
 import styles from "./../styles/p4.module.scss";
 
 //const viewportWidth = window.innerWidth;
+// const addStyle = () => {
+//   const slickTrackDiv = document.getElementsByClassName("slick-track");
+//   slickTrackDiv.style.display = "flex";
+//   slickTrackDiv.style.alignItem = "center";
+// };
 
-const Carousel = ({ category }) => {
+function Carousel({ category }) {
   const [photoList, setPhotoList] = useState([]);
   const [viewportWidth, setViewportWidth] = useState(undefined);
 
@@ -22,6 +27,8 @@ const Carousel = ({ category }) => {
     };
     fetchList();
   }, []);
+
+  // useEffect(() => addStyle(), []);
 
   const settings = {
     dots: viewportWidth > 700 ? true : false,
@@ -69,6 +76,6 @@ const Carousel = ({ category }) => {
         })}
     </Slider>
   );
-};
+}
 
 export default Carousel;

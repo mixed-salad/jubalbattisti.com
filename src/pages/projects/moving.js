@@ -23,7 +23,7 @@ const Moving = () => {
                     url={video.url}
                     light={true}
                     width="auto"
-                    heigh="auto"
+                    height="auto"
                     controls
                   />
                 </div>
