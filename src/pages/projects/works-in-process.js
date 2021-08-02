@@ -1,9 +1,11 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import { getList } from "../../api/cloudinary";
+// import { getList } from "../../api/cloudinary";
 import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
 import styles from "./../../styles/performance.module.scss";
+import processImages from "./../../json/process.json";
+
 // It uses the same styling as the Performance page
 
 const galleryVariants = {
@@ -32,17 +34,17 @@ const galleryImgVariants = {
 };
 
 const WorksInProcess = () => {
-  const [photoList, setPhotoList] = useState([]);
+  // const [photoList, setPhotoList] = useState([]);
   const [lightboxVisible, setLightboxVisible] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(1);
 
-  useEffect(() => {
-    const fetchList = async () => {
-      const list = await getList("process");
-      setPhotoList(["title", ...list]);
-    };
-    fetchList();
-  }, []);
+  // useEffect(() => {
+  //   const fetchList = async () => {
+  //     const list = await getList("process");
+  //     setPhotoList(["title", ...list]);
+  //   };
+  //   fetchList();
+  // }, []);
 
   const openLightbox = (index) => {
     setLightboxVisible(true);
@@ -63,38 +65,34 @@ const WorksInProcess = () => {
           animate="animate"
           variants={galleryVariants}
         >
-          {!!photoList.length &&
-            photoList.map((photo, i) => {
-              if (i === 0) {
-                return (
-                  <div
-                    key="process_title"
-                    className={`${styles["card"]} ${styles["title"]}`}
-                  >
-                    <h2>works in process</h2>
-                  </div>
-                );
-              } else {
-                return (
-                  <motion.div
-                    key={photo.public_id}
-                    className={styles.card}
-                    onClick={() => openLightbox(i)}
-                    variants={galleryImgVariants}
-                  >
-                    <motion.img
-                      className={styles.img}
-                      src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${photo.public_id}`}
-                    />
-                  </motion.div>
-                );
-              }
+          <div
+            key="process_title"
+            className={`${styles["card"]} ${styles["title"]}`}
+          >
+            <h2>works in process</h2>
+          </div>
+          {!!processImages.length &&
+            processImages.map((image, i) => {
+              return (
+                <motion.div
+                  key={i}
+                  className={styles.card}
+                  onClick={() => openLightbox(i)}
+                  variants={galleryImgVariants}
+                >
+                  <motion.img
+                    className={styles.img}
+                    src={`/images/process/${image.src}`}
+                    alt={image.alt}
+                  />
+                </motion.div>
+              );
             })}
         </motion.div>
         {/* This is to show the lightbox when the photo is clicked */}
         {lightboxVisible && (
           <Lightbox
-            images={photoList}
+            images={processImages}
             index={photoIndex}
             onCloseLightbox={() => setLightboxVisible(false)}
             category="process"

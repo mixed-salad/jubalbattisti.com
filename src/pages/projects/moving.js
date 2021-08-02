@@ -1,6 +1,6 @@
 import Head from "next/head";
 import ReactPlayer from "react-player";
-import videos from "./../../videos.json";
+import videos from "./../../json/videos.json";
 import styles from "./../../styles/moving.module.scss";
 
 const Moving = () => {
