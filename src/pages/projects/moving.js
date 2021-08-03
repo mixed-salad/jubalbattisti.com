@@ -12,7 +12,7 @@ const Moving = () => {
       </Head>
       <div>
         <div className={styles.header}>
-          <h1>MOTION</h1>
+          <h1 className={styles.title}>MOTION</h1>
         </div>
         <div className="main">
           <div className={styles.contents}>
@@ -22,8 +22,8 @@ const Moving = () => {
                   <ReactPlayer
                     url={video.url}
                     light={true}
-                    width="auto"
-                    height="auto"
+                    width="100%"
+                    height="100%"
                     controls
                   />
                 </div>

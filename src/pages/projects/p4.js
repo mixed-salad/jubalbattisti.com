@@ -16,7 +16,7 @@ const P4 = () => {
           <section className={styles.description}>
             <p>
               <em>
-                <strong>Post Performace Portrait Project (P^4)</strong>
+                <strong>Post Performance Portrait Project (P^4)</strong>
               </em>
             </p>
             <p>

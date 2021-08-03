@@ -1,6 +1,7 @@
-import Head from 'next/head';
-import styles from './../../styles/p4.module.scss';
-import Carousel from '../../components/Carousel';
+import Head from "next/head";
+import styles from "./../../styles/p4.module.scss";
+import Carousel from "../../components/Carousel";
+import images from "./../../json/dueto.json";
 
 const Dueto = () => {
   return (
@@ -19,11 +20,11 @@ const Dueto = () => {
             </p>
             <p>A collaboration with ceramics artist Jojo Corväiá</p>
             <p className={styles.link}>
-              <a href="https://jojocorvaia.com.de/">{'>>'} Visit website</a>
+              <a href="https://jojocorvaia.com.de/">{">>"} Visit website</a>
             </p>
           </section>
           <section className={styles.photoSection}>
-            <Carousel category="dueto" />
+            <Carousel category="dueto" images={images} />
           </section>
         </main>
       </div>
