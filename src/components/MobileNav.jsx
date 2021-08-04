@@ -73,7 +73,11 @@ const MobileNav = () => {
               <FaCompressAlt />
             </motion.div>
             <motion.div className="navLinks" variants={linkWrapperVariants}>
-              <motion.div className="navLinks__link" variants={linkVariants}>
+              <motion.div
+                className="navLinks__link"
+                variants={linkVariants}
+                onClick={() => setNavView(!navView)}
+              >
                 <Link href="/projects">
                   <a>Projects</a>
                 </Link>
