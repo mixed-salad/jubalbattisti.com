@@ -4,6 +4,10 @@
 .mobile {
   display: none;
 }
+.displayNone {
+  display: none;
+}
+
 .photoGalleryWrapper {
   position: relative;
   display: flex;
@@ -38,9 +42,19 @@
   }
 }
 
-@media (max-width: 800px) {
-  .card {
-    margin: 1em 0.5em;
+@media (max-width: 600px) {
+  .photoGalleryWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .card {
+      margin-right: 1em;
+      margin-bottom: 1em;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
   }
 }
 
@@ -131,5 +145,11 @@
     background-color: rgba(0, 0, 0, 1);
     top: 0;
     left: 0;
+    z-index: 10;
+    .carouselWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }
