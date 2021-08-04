@@ -60,6 +60,8 @@
     margin: 0 auto;
     .project {
       margin: 1em 0;
+      position: relative;
+      z-index: 0;
       img {
         width: 100%;
         // margin: 0 1em;
