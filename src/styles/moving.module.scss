@@ -20,19 +20,12 @@
   text-align: center;
 }
 
-@media (max-width: 600px) {
-  .header {
-    height: 20em;
-    background-size: cover;
-  }
-}
-
-@media (max-width: 1000px) and (mix-width: 601px) {
-  .header {
-    height: 20em;
-    background-size: cover;
-  }
-}
+// @media (max-width: 1000px) and (mix-width: 601px) {
+//   .header {
+//     height: 20em;
+//     background-size: cover;
+//   }
+// }
 
 // Contents
 
@@ -71,7 +64,7 @@
     align-items: center;
     .react_player {
       height: 13em;
-      width: 23em;
+      width: 22em;
     }
   }
 }

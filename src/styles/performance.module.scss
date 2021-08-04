@@ -25,7 +25,7 @@
     cursor: pointer;
     img {
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       &:hover {
         opacity: 0.5;
         transition: 0.5s;
@@ -50,10 +50,12 @@
     justify-content: center;
     align-items: center;
     .card {
-      margin-right: 1em;
-      margin-bottom: 1em;
+      height: auto;
       flex-grow: 0;
       flex-shrink: 0;
+    }
+    .title {
+      padding: 2em 3em;
     }
   }
 }
@@ -140,16 +142,29 @@
     flex-direction: column;
     justify-content: center;
     position: absolute;
-    width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 1);
     top: 0;
     left: 0;
     z-index: 10;
     .carouselWrapper {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background-color: rgba(0, 0, 0, 1);
+      .closeLightbox {
+        position: fixed;
+        right: 5%;
+        top: 1em;
+        z-index: 15;
+        color: rgba(255, 255, 255, 0.5);
+        &:hover {
+          color: rgba(255, 255, 255, 0.7);
+          cursor: pointer;
+        }
+      }
     }
   }
 }

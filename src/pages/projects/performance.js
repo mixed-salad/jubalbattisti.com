@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import styles from "./../../styles/performance.module.scss";
 import Carousel from "../../components/Carousel";
 import performanceImages from "./../../json/performance.json";
+import { FaTimesCircle } from "react-icons/fa";
 
 const galleryVariants = {
   initial: {},
