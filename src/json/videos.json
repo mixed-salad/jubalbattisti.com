@@ -91,7 +91,7 @@
     "id": 8,
     "title": "STRONG by Sharon Eyal",
     "description": "",
-    "url": "https://player.vimeo.com/video/393927761",
+    "url": "https://player.vimeo.com/video/393927761?",
     "type": "promotion",
     "company": "Staatsballett Berlin"
   },
@@ -126,14 +126,6 @@
     "url": "https://vimeo.com/557099730",
     "type": "dance film",
     "company": ""
-  },
-  {
-    "id": 15,
-    "title": "FROM BERLIN WITH LOVE Digital Gala",
-    "description": "",
-    "url": "https://www.youtube.com/embed/vwxExysqN50",
-    "type": "filmed dance",
-    "company": "Staatsballett Berlin"
   },
   {
     "id": 17,
