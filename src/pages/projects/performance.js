@@ -69,15 +69,14 @@ const Performance = () => {
         {/* This is the to show the gallery */}
         <div className={styles.desktop}>
           <motion.div
-            className={styles.photoGalleryWrapper}
+            className={`${styles["photoGalleryWrapper"]} ${
+              lightboxVisible ? "styles[displayNone]" : ""
+            }`}
             initial="initial"
             animate="animate"
             variants={galleryVariants}
           >
-            <div
-              key="performance_title"
-              className={`${styles["card"]} ${styles["title"]}`}
-            >
+            <div className={`${styles["card"]} ${styles["title"]}`}>
               <h2>performance</h2>
             </div>
             {!!performanceImages.length &&
@@ -110,6 +109,12 @@ const Performance = () => {
               </div>
               <div className={styles.mobile}>
                 <div className={styles.carouselWrapper}>
+                  <span
+                    onClick={() => setLightboxVisible(false)}
+                    className={styles.closeLightbox}
+                  >
+                    <FaTimesCircle size="2em" />
+                  </span>
                   <Carousel category="performance" images={performanceImages} />
                 </div>
               </div>
