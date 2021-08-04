@@ -18,9 +18,9 @@ const Dueto = () => {
                 <strong>DUETO</strong>
               </em>
             </p>
-            <p>A collaboration with ceramics artist Jojo Corväiá</p>
-            <p className={styles.link}>
-              <a href="https://jojocorvaia.com.de/">{">>"} Visit website</a>
+            <p>
+              A collaboration with ceramics artist{" "}
+              <a href="https://jojocorvaia.com.de/">Jojo Corväiá</a>
             </p>
           </section>
           <section className={styles.photoSection}>
