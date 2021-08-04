@@ -22,7 +22,7 @@
   {
     "id": 4,
     "src": "05_210707_Dance_On_Deep_Song_by_Jubal_Battisti_121.jpg",
-    "alt": "Dance On Ensemble - Deep song by Martha Graham"
+    "alt": "Dance On Ensemble - Deep Song by Martha Graham"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
   {
     "id": 11,
     "src": "12_200110_The+Breakdown_by_Jubal_Battisti_0216.jpg",
-    "alt": "Staatsballett Berlin - Sunny by Emanuel Gat"
+    "alt": "Jo Strømgren Kompani - The Breakdown by Jo Strømgren"
   },
   {
     "id": 12,
@@ -112,7 +112,7 @@
   {
     "id": 22,
     "src": "23_191015_Tired+Man_by_Jubal_Battisti_0507.jpg",
-    "alt": "Staatsballet Berlin - Half Life by Sharon Eyal"
+    "alt": "Jo Strømgren Kompani - Tired Man by Jo Strømgren"
   },
   {
     "id": 23,
@@ -152,7 +152,7 @@
   {
     "id": 30,
     "src": "31_190206_Hopeless._Sergiu_Matis_by_Jubal_Battisti-266.jpg",
-    "alt": "Dance On Ensemble - Works in Silence by Lucinda Childs"
+    "alt": "Hopeless by Sergiu Matis"
   },
   {
     "id": 31,
@@ -216,27 +216,22 @@
   },
   {
     "id": 43,
-    "src": "44_200213_Rita+Klaus_by_Jubal_Battisti_0363.jpg",
-    "alt": "Rita Klaus by Martin Hansen"
-  },
-  {
-    "id": 44,
     "src": "45_200213_Rita+Klaus_by_Jubal_Battisti_0789.jpg",
     "alt": "Rita Klaus by Martin Hansen"
   },
   {
-    "id": 45,
+    "id": 44,
     "src": "46_200213_Rita+Klaus_by_Jubal_Battisti_0966.jpg",
     "alt": "Rita Klaus by Martin Hansen"
   },
   {
-    "id": 46,
-    "src": "47_200312_Skånes_Mascarell_Second+Landscape_by_Jubal_Battisti_1092.jpg",
+    "id": 45,
+    "src": "47_200312_Skanes_Mascarell_Second+Landscape_by_Jubal_Battisti_1092.jpg",
     "alt": "Skånes Danstheater - Second Landscape by Maria Mascarell"
   },
   {
-    "id": 47,
-    "src": "48_200312_Skånes_Mascarell_Second+Landscape_by_Jubal_Battisti_1197.jpg",
+    "id": 46,
+    "src": "48_200312_Skanes_Mascarell_Second+Landscape_by_Jubal_Battisti_1197.jpg",
     "alt": "Skånes Danstheater - Second Landscape by Maria Mascarell"
   }
 ]
