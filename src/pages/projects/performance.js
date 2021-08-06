@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
-import { getList } from "../../api/cloudinary";
+import { useState } from "react";
 import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
 import styles from "./../../styles/performance.module.scss";
@@ -34,26 +33,8 @@ const galleryImgVariants = {
 };
 
 const Performance = () => {
-  // const [photoList, setPhotoList] = useState([]);
   const [lightboxVisible, setLightboxVisible] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-  // const [mobile, setMobile] = useState(false);
-
-  // useEffect(() => {
-  //   const fetchList = async () => {
-  //     const list = await getList("performance");
-  //     setPhotoList(["title", ...list]);
-  //   };
-  //   fetchList();
-  // }, []);
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     const deviceWidth = window.innerWidth;
-  //     deviceWidth < 800 ? setMobile(true) : setMobile(false);
-  //   };
-  //   window.addEventListener("resize", handleResize);
-  // }, []);
 
   const openLightbox = (index) => {
     setLightboxVisible(true);
@@ -116,7 +97,11 @@ const Performance = () => {
                   >
                     <FaTimesCircle size="2em" />
                   </span>
-                  <Carousel category="performance" images={performanceImages} />
+                  <Carousel
+                    category="performance"
+                    images={performanceImages}
+                    index={photoIndex}
+                  />
                 </div>
               </div>
             </>
