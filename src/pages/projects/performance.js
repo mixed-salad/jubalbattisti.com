@@ -3,9 +3,9 @@ import { useState } from "react";
 import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
 import styles from "./../../styles/performance.module.scss";
-import Carousel from "../../components/Carousel";
 import performanceImages from "./../../json/performance.json";
-import { FaTimesCircle } from "react-icons/fa";
+// import Carousel from "../../components/Carousel";
+// import { FaTimesCircle } from "react-icons/fa";
 
 const galleryVariants = {
   initial: {},
@@ -89,21 +89,22 @@ const Performance = () => {
                   category="performance"
                 />
               </div>
-              <div className={styles.mobile}>
+              {/* <div className={styles.mobile}>
                 <div className={styles.carouselWrapper}>
                   <span
                     onClick={() => setLightboxVisible(false)}
                     className={styles.closeLightbox}
                   >
-                    <FaTimesCircle size="2em" />
+                    <FaTimesCircle size="1em" />
                   </span>
                   <Carousel
                     category="performance"
                     images={performanceImages}
                     index={photoIndex}
                   />
+                  
                 </div>
-              </div>
+              </div> */}
             </>
           )}
         </div>
