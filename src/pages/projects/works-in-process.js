@@ -4,6 +4,9 @@ import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
 import styles from "./../../styles/performance.module.scss";
 import processImages from "./../../json/process.json";
+import Link from "next/link";
+import { FaArrowCircleUp } from "react-icons/fa";
+
 // import Carousel from "../../components/Carousel";
 // import { FaTimesCircle } from "react-icons/fa";
 
@@ -37,6 +40,17 @@ const galleryImgVariants = {
 const WorksInProcess = () => {
   const [lightboxVisible, setLightboxVisible] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
+  const [scrollStatus, setScrollStatus] = useState("");
+
+  let timeoutId = null;
+
+  const handleScroll = (e) => {
+    if (timeoutId) clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      console.log("timeout");
+    }, 1000);
+    if (scrollStatus !== "scrolling") setScrollStatus("scrolling");
+  };
 
   const openLightbox = (index) => {
     setLightboxVisible(true);
@@ -49,7 +63,12 @@ const WorksInProcess = () => {
         <title>Jubal Battisti Photography | Performance</title>
         <meta name="keywords" content="photography/videography" />
       </Head>
-      <div className="main">
+      <div className="main" id="process-top" onScroll={handleScroll}>
+        <div className={styles.toTopButton}>
+          <Link href="#process-top">
+            <FaArrowCircleUp size="1.5em" className={styles.toTopIcon} />
+          </Link>
+        </div>
         {/* This is the to show the gallery */}
         <div className={styles.desktop}>
           <motion.div

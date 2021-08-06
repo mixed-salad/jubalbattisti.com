@@ -6,6 +6,8 @@ import styles from "./../../styles/performance.module.scss";
 import performanceImages from "./../../json/performance.json";
 // import Carousel from "../../components/Carousel";
 // import { FaTimesCircle } from "react-icons/fa";
+import { FaArrowCircleUp } from "react-icons/fa";
+import Link from "next/link";
 
 const galleryVariants = {
   initial: {},
@@ -47,7 +49,12 @@ const Performance = () => {
         <title>Jubal Battisti Photography | Performance</title>
         <meta name="keywords" content="photography/videography" />
       </Head>
-      <div className="main">
+      <div className="main" id="performance-top">
+        <div className={styles.toTopButton}>
+          <Link href="#performance-top">
+            <FaArrowCircleUp size="1.5em" className={styles.toTopIcon} />
+          </Link>
+        </div>
         {/* This is the to show the gallery */}
         <div className={styles.desktop}>
           <motion.div

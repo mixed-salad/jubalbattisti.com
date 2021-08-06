@@ -10,6 +10,25 @@
 .arrows {
   display: none;
 }
+.toTopButton {
+  position: fixed;
+  right: 0;
+  bottom: 1em;
+  z-index: 2;
+  padding: 0.5em;
+  .toTopIcon {
+    color: #8c8c8cb0;
+    &:visited,
+    &:active {
+      color: #8c8c8cb0;
+    }
+    &:hover {
+      color: #383838;
+      transition: 0.3s;
+    }
+  }
+}
+
 .photoGalleryWrapper {
   position: relative;
   display: flex;
