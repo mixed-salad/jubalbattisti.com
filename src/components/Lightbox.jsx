@@ -42,14 +42,14 @@ const Lightbox = ({ images, index, onCloseLightbox, category }) => {
   const closeLightbox = () => onCloseLightbox();
 
   const decreasePhotoIndex = () => {
-    currentIndex < 2
+    currentIndex < 1
       ? setCurrentIndex(images.length - 1)
       : setCurrentIndex(currentIndex - 1);
   };
 
   const increasePhotoIndex = () => {
     currentIndex > images.length - 2
-      ? setCurrentIndex(1)
+      ? setCurrentIndex(0)
       : setCurrentIndex(currentIndex + 1);
   };
 
@@ -64,14 +64,18 @@ const Lightbox = ({ images, index, onCloseLightbox, category }) => {
         variants={lightboxVariants}
       >
         <span onClick={() => closeLightbox()} className={styles.closeLightbox}>
-          <FaTimesCircle size="2em" />
+          <FaTimesCircle size="1em" />
         </span>
-        <motion.div className={styles.modalContent_lg}>
+        <motion.div className={styles.modalContent_md}>
           <motion.img
             variants={lightboxImgVariants}
             className={styles.lightboxImg}
             src={`/images/${category}/${image.src}`}
           ></motion.img>
+          <div className={styles.arrows}>
+            <span>←</span>
+            <span>→</span>
+          </div>
           <div className={styles.lightboxDescriptions}>
             <span>{image.alt}</span>
             <span>

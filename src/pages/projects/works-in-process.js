@@ -4,8 +4,8 @@ import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
 import styles from "./../../styles/performance.module.scss";
 import processImages from "./../../json/process.json";
-import Carousel from "../../components/Carousel";
-import { FaTimesCircle } from "react-icons/fa";
+// import Carousel from "../../components/Carousel";
+// import { FaTimesCircle } from "react-icons/fa";
 
 // It uses the same styling as the Performance page
 
@@ -36,7 +36,7 @@ const galleryImgVariants = {
 
 const WorksInProcess = () => {
   const [lightboxVisible, setLightboxVisible] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(1);
+  const [photoIndex, setPhotoIndex] = useState(0);
 
   const openLightbox = (index) => {
     setLightboxVisible(true);
@@ -91,13 +91,13 @@ const WorksInProcess = () => {
                   category="process"
                 />
               </div>
-              <div className={styles.mobile}>
+              {/* <div className={styles.mobile}>
                 <div className={styles.carouselWrapper}>
                   <span
                     onClick={() => setLightboxVisible(false)}
                     className={styles.closeLightbox}
                   >
-                    <FaTimesCircle size="2em" />
+                    <FaTimesCircle size="1em" />
                   </span>
                   <Carousel
                     category="process"
@@ -105,7 +105,7 @@ const WorksInProcess = () => {
                     index={photoIndex}
                   />
                 </div>
-              </div>
+              </div> */}
             </>
           )}
         </div>

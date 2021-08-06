@@ -1,13 +1,15 @@
 .desktop {
   display: block;
 }
-.mobile {
+// .mobile {
+//   display: none;
+// }
+// .displayNone {
+//   display: none;
+// }
+.arrows {
   display: none;
 }
-.displayNone {
-  display: none;
-}
-
 .photoGalleryWrapper {
   position: relative;
   display: flex;
@@ -85,7 +87,7 @@
       cursor: pointer;
     }
   }
-  .modalContent_lg {
+  .modalContent_md {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,36 +137,49 @@
 
 @media (max-width: 800px) {
   .modalContent_md {
-    display: none;
-  }
-  .mobile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    .carouselWrapper {
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
+    .arrows {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .lightboxDescriptions {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background-color: rgba(0, 0, 0, 1);
-      .closeLightbox {
-        position: fixed;
-        right: 5%;
-        top: 1em;
-        z-index: 15;
-        color: rgba(255, 255, 255, 0.5);
-        &:hover {
-          color: rgba(255, 255, 255, 0.7);
-          cursor: pointer;
-        }
-      }
+      align-items: flex-end;
+      margin-right: 1em;
     }
   }
+  //   .mobile {
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: center;
+  //     position: absolute;
+  //     height: 100vh;
+  //     top: 0;
+  //     left: 0;
+  //     z-index: 10;
+  //     .carouselWrapper {
+  //       position: fixed;
+  //       width: 100vw;
+  //       height: 100vh;
+  //       display: flex;
+  //       flex-direction: column;
+  //       justify-content: center;
+  //       background-color: rgba(0, 0, 0, 1);
+  //       .closeLightbox {
+  //         position: fixed;
+  //         right: 5%;
+  //         top: 1em;
+  //         z-index: 15;
+  //         color: rgba(255, 255, 255, 0.5);
+  //         &:hover {
+  //           color: rgba(255, 255, 255, 0.7);
+  //           cursor: pointer;
+  //         }
+  //       }
+  //     }
+  //   }
 }
