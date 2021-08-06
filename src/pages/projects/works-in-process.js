@@ -80,7 +80,7 @@ const WorksInProcess = () => {
             variants={galleryVariants}
           >
             <div className={`${styles["card"]} ${styles["title"]}`}>
-              <h2>Works in Process</h2>
+              <h2>works in process</h2>
             </div>
             {!!processImages.length &&
               processImages.map((image, i) => {
