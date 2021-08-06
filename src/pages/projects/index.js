@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Image, Transformation } from "cloudinary-react";
+import { Image } from "cloudinary-react";
 import styles from "./../../styles/projects.module.scss";
 import { motion } from "framer-motion";
 
@@ -26,7 +26,6 @@ const itemVariants = {
   initial: { opacity: 0, y: 50 },
   enter: {
     opacity: 1,
-    scale: 1,
     y: 0,
     transition: { duration: 0.3, ease: "easeInOut" },
   },
