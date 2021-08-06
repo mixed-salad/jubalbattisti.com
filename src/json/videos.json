@@ -112,20 +112,20 @@
     "company": "Staatsballett Berlin"
   },
   {
-    "id": 12,
-    "title": "PLATEAU EFFECT by Jefta van Dinther",
-    "description": "",
-    "url": "https://player.vimeo.com/video/364827725",
-    "type": "promotion",
-    "company": "Staatsballett Berlin"
-  },
-  {
     "id": 14,
     "title": "BLINDGÄNGER",
     "description": "Blindgänger is a dance film created in memory of those who lost their lives at the Berlin wall.",
     "url": "https://vimeo.com/557099730",
     "type": "dance film",
     "company": ""
+  },
+  {
+    "id": 12,
+    "title": "PLATEAU EFFECT by Jefta van Dinther",
+    "description": "",
+    "url": "https://player.vimeo.com/video/364827725",
+    "type": "promotion",
+    "company": "Staatsballett Berlin"
   },
   {
     "id": 17,

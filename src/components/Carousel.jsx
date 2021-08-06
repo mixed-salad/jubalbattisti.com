@@ -5,16 +5,18 @@ import { useEffect, useState } from "react";
 import SliderArrow from "./SliderArrows";
 import styles from "./../styles/p4.module.scss";
 
-function Carousel({ category, images }) {
+function Carousel({ category, images, index }) {
   const [viewportWidth, setViewportWidth] = useState(undefined);
   useEffect(() => setViewportWidth(window.innerWidth), []);
   const settings = {
-    dots: viewportWidth > 700 ? true : false,
+    dots: viewportWidth > 1300 ? true : false,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    initialSlide: index,
     className: styles.slides,
+    // variableWidth: true,
   };
 
   return (

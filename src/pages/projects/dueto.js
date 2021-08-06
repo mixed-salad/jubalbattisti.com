@@ -30,7 +30,7 @@ const Dueto = () => {
             </p>
           </section>
           <section className={styles.photoSection}>
-            <Carousel category="dueto" images={images} />
+            <Carousel category="dueto" images={images} index={0} />
           </section>
         </main>
       </div>

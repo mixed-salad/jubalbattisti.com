@@ -1,10 +1,11 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
-// import { getList } from "../../api/cloudinary";
+import { useState } from "react";
 import Lightbox from "../../components/Lightbox";
 import { motion } from "framer-motion";
 import styles from "./../../styles/performance.module.scss";
 import processImages from "./../../json/process.json";
+import Carousel from "../../components/Carousel";
+import { FaTimesCircle } from "react-icons/fa";
 
 // It uses the same styling as the Performance page
 
@@ -34,17 +35,8 @@ const galleryImgVariants = {
 };
 
 const WorksInProcess = () => {
-  // const [photoList, setPhotoList] = useState([]);
   const [lightboxVisible, setLightboxVisible] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(1);
-
-  // useEffect(() => {
-  //   const fetchList = async () => {
-  //     const list = await getList("process");
-  //     setPhotoList(["title", ...list]);
-  //   };
-  //   fetchList();
-  // }, []);
 
   const openLightbox = (index) => {
     setLightboxVisible(true);
@@ -54,50 +46,69 @@ const WorksInProcess = () => {
   return (
     <>
       <Head>
-        <title>Jubal Battisti Photography | Works in Process</title>
+        <title>Jubal Battisti Photography | Performance</title>
         <meta name="keywords" content="photography/videography" />
       </Head>
       <div className="main">
         {/* This is the to show the gallery */}
-        <motion.div
-          className={styles.photoGalleryWrapper}
-          initial="initial"
-          animate="animate"
-          variants={galleryVariants}
-        >
-          <div
-            key="process_title"
-            className={`${styles["card"]} ${styles["title"]}`}
+        <div className={styles.desktop}>
+          <motion.div
+            className={`${styles["photoGalleryWrapper"]} ${
+              lightboxVisible ? "styles[displayNone]" : ""
+            }`}
+            initial="initial"
+            animate="animate"
+            variants={galleryVariants}
           >
-            <h2>works in process</h2>
-          </div>
-          {!!processImages.length &&
-            processImages.map((image, i) => {
-              return (
-                <motion.div
-                  key={i}
-                  className={styles.card}
-                  onClick={() => openLightbox(i)}
-                  variants={galleryImgVariants}
-                >
-                  <motion.img
-                    className={styles.img}
-                    src={`/images/process/${image.src}`}
-                    alt={image.alt}
+            <div className={`${styles["card"]} ${styles["title"]}`}>
+              <h2>Works in Process</h2>
+            </div>
+            {!!processImages.length &&
+              processImages.map((image, i) => {
+                return (
+                  <motion.div
+                    key={image.id}
+                    className={styles.card}
+                    onClick={() => openLightbox(i)}
+                    variants={galleryImgVariants}
+                  >
+                    <motion.img
+                      className={styles.img}
+                      src={`/images/process/${image.src}`}
+                    />
+                  </motion.div>
+                );
+              })}
+          </motion.div>
+          {/* This is to show the lightbox when the photo is clicked */}
+          {lightboxVisible && (
+            <>
+              <div className={styles.modalContent_md}>
+                <Lightbox
+                  images={processImages}
+                  index={photoIndex}
+                  onCloseLightbox={() => setLightboxVisible(false)}
+                  category="process"
+                />
+              </div>
+              <div className={styles.mobile}>
+                <div className={styles.carouselWrapper}>
+                  <span
+                    onClick={() => setLightboxVisible(false)}
+                    className={styles.closeLightbox}
+                  >
+                    <FaTimesCircle size="2em" />
+                  </span>
+                  <Carousel
+                    category="process"
+                    images={processImages}
+                    index={photoIndex}
                   />
-                </motion.div>
-              );
-            })}
-        </motion.div>
-        {/* This is to show the lightbox when the photo is clicked */}
-        {lightboxVisible && (
-          <Lightbox
-            images={processImages}
-            index={photoIndex}
-            onCloseLightbox={() => setLightboxVisible(false)}
-            category="process"
-          />
-        )}
+                </div>
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </>
   );

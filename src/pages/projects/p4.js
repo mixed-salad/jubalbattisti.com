@@ -35,7 +35,7 @@ const P4 = () => {
             </p>
           </section>
           <section className={styles.photoSection}>
-            {!!images && <Carousel category="p4" images={images} />}
+            {!!images && <Carousel category="p4" images={images} index={0} />}
           </section>
         </main>
       </div>
