@@ -9,7 +9,7 @@ function Carousel({ category, images, index }) {
   const [viewportWidth, setViewportWidth] = useState(undefined);
   useEffect(() => setViewportWidth(window.innerWidth), []);
   const settings = {
-    dots: viewportWidth > 1300 ? true : false,
+    dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
