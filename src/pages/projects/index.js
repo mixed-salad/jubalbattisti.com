@@ -107,15 +107,15 @@ const Projects = () => {
         </motion.div>
       </main>
       <section className={styles.sponcers}>
-        <p>
+        <p className={styles.sponcersText}>
           Unterstützt durch DIEHL+RITTER/TANZPAKT RECONNECT, gefördert von
           der/dem Beauftragten der Bundesregierung für Kultur und Medien im
           Rahmen der Initiative NEUSTART KULTUR. Hilfsprogramm Tanz
         </p>
         <div className={styles.footerImgWrapper}>
+          <img src="logos/Neustart_Kultur.svg" alt="DR logo" />
           <img src="logos/BKM_Web_de.gif" alt="BKM logo" />
           <img src="logos/DR_Web.jpeg" alt="DR logo" />
-          <img src="logos/Neustart_Kultur.svg" alt="DR logo" />
         </div>
       </section>
     </div>
