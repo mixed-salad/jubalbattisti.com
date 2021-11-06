@@ -80,8 +80,15 @@
   align-items: center;
 }
 
+.sponcersText {
+  max-width: 50em;
+  font-size: 0.5rem;
+  padding: 0 1em;
+  text-align: center;
+}
+
 .footerImgWrapper {
-  height: 4em;
+  height: 3em;
   display: flex;
-  column-gap: 0.1em;
+  column-gap: 0.5em;
 }
