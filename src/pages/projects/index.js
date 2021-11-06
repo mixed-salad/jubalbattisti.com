@@ -38,13 +38,13 @@ const itemVariants = {
 
 const Projects = () => {
   return (
-    <>
+    <div className={styles.projectPage}>
       <Head>
         <title>Jubal Battisti Photography | Projects</title>
         <meta name="keywords" content="photography/videography" />
       </Head>
       {/* Framer motion transitions */}
-      <div className="main">
+      <main className="main">
         <motion.div
           initial="initial"
           animate="enter"
@@ -105,8 +105,20 @@ const Projects = () => {
             </Link>
           </motion.div>
         </motion.div>
-      </div>
-    </>
+      </main>
+      <section className={styles.sponcers}>
+        <p>
+          Unterstützt durch DIEHL+RITTER/TANZPAKT RECONNECT, gefördert von
+          der/dem Beauftragten der Bundesregierung für Kultur und Medien im
+          Rahmen der Initiative NEUSTART KULTUR. Hilfsprogramm Tanz
+        </p>
+        <div className={styles.footerImgWrapper}>
+          <img src="logos/BKM_Web_de.gif" alt="BKM logo" />
+          <img src="logos/DR_Web.jpeg" alt="DR logo" />
+          <img src="logos/Neustart_Kultur.svg" alt="DR logo" />
+        </div>
+      </section>
+    </div>
   );
 };
 

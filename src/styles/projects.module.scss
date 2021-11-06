@@ -73,3 +73,15 @@
     }
   }
 }
+
+.sponcers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerImgWrapper {
+  height: 4em;
+  display: flex;
+  column-gap: 0.1em;
+}
