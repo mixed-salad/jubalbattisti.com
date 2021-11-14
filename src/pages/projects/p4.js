@@ -1,8 +1,10 @@
 import Head from "next/head";
 import styles from "./../../styles/p4.module.scss";
 import Carousel from "../../components/Carousel";
+import p4Images from "./../../json/p4.json";
 
 const P4 = () => {
+  const images = p4Images;
   return (
     <>
       <Head>
@@ -33,7 +35,7 @@ const P4 = () => {
             </p>
           </section>
           <section className={styles.photoSection}>
-            <Carousel category="p4" />
+            {!!images && <Carousel category="p4" images={images} />}
           </section>
         </main>
       </div>
