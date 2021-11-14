@@ -70,16 +70,14 @@ const Lightbox = ({ images, index, onCloseLightbox, category }) => {
           <motion.img
             variants={lightboxImgVariants}
             className={styles.lightboxImg}
-            src={`https://res.cloudinary.com/jubalbattisti/image/upload/v1619815218/${image.public_id}`}
+            src={`/images/${category}/${image.src}`}
           ></motion.img>
-          {image.context.custom.work && image.context.custom.choreographer && (
-            <div className={styles.lightboxDescriptions}>
-              <span>{`${image.context.custom.work} by ${image.context.custom.choreographer}`}</span>
-              <span>
-                {currentIndex} / {images.length - 1}
-              </span>
-            </div>
-          )}
+          <div className={styles.lightboxDescriptions}>
+            <span>{image.alt}</span>
+            <span>
+              {currentIndex + 1} / {images.length}
+            </span>
+          </div>
         </motion.div>
 
         <div className={styles.sliderNavigationGroup}>
