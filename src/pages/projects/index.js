@@ -113,9 +113,21 @@ const Projects = () => {
           Rahmen der Initiative NEUSTART KULTUR. Hilfsprogramm Tanz
         </p>
         <div className={styles.footerImgWrapper}>
-          <img src="logos/Neustart_Kultur.svg" alt="DR logo" />
-          <img src="logos/BKM_Web_de.gif" alt="BKM logo" />
-          <img src="logos/DR_Web.jpeg" alt="DR logo" />
+          <Link href="https://www.diehl-ritter.de/">
+            <a target="_blank">
+              <img src="logos/DR_Web.jpeg" alt="DR logo" />
+            </a>
+          </Link>
+          <Link href="https://www.bundesregierung.de/breg-%20de/bundesregierung/staatsministerin-fuer-kultur-und-medien/kultur/1772990-1772990">
+            <a target="_blank">
+              <img src="logos/Neustart_Kultur.svg" alt="DR logo" />
+            </a>
+          </Link>
+          <Link href="https://www.bundesregierung.de/breg-de/bundesregierung/staatsministerin-fuer-kultur-und-medien">
+            <a target="_blank">
+              <img src="logos/BKM_Web_de.gif" alt="BKM logo" />
+            </a>
+          </Link>
         </div>
       </section>
     </div>
